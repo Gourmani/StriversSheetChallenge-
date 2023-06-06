@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+
+pair<int,int> missingAndRepeating(vector<int> &arr, int n)
+{
+	// Write your code here 
+	sort(arr.begin(),arr.end());
+	int m,r;
+	int sum=(n*(n+1))/2;
+	int d_sum=0;
+	for(int i=0;i<n;i++){
+		d_sum+=arr[i];
+		if(arr[i]==arr[i+1]){
+			r=arr[i];//repeating number
+			
+		}
+		m=d_sum-r;
+	}
+	int ms=sum-m;//missing number
+        return {ms,r};
+}
