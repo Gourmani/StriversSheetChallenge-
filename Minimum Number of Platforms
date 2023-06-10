@@ -1,0 +1,19 @@
+int calculateMinPatforms(int at[], int dt[], int n) {
+    // Write your code here.
+    sort(at,at+n);
+    sort(dt,dt+n);
+    int platform=0;
+    int i=0;//dep time
+
+    for(int j=0;j<n;j++){//j for arrival time
+        if(at[j]<=dt[i]){//if current arrival time less than current dep time 
+            platform++;
+        }
+        else{
+            i++;//dep time
+        }
+
+        }
+
+    return platform;
+}
